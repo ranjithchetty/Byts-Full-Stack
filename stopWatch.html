@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWatch</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/3063/3063792.png" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #5e3ffb;
+            background: radial-gradient(circle, rgba(94, 63, 251, 0) 0%, rgba(166, 106, 222, 1) 100%);
+            color: white;
+            min-height: 100vh;
+        }
+
+        footer {
+            margin-top: 7%;
+            text-align: center;
+            color: black;
+            font-size: x-large;
+            font-family: monospace;
+            border-radius: 20px;
+             border: 7px solid black;
+            border-radius: 20px;
+            height: 250px;
+            width: 380px;
+            margin-left:40%;
+            background-color: white;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+        button{
+            background-color: gray;
+            color: white;
+            height: 30px;
+            width: 60px;
+            padding: auto;
+            border-radius: 10px;
+        }
+
+        header {
+            text-transform: capitalize;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header a:hover{
+            background-color: gray;
+            color: azure;
+            border-radius: 5px;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            padding: 2px;
+        }
+        #get{
+            border: 3px solid gray;
+            height: fit-content;
+            width: 260px;
+            margin-left:15%;
+            border-radius: 8px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDZ6L3fYeRi2D4pQelCLdQbi4P3w7Pf7NKFQ&s">
+        <ul>
+            <li><a href="./main.html">home</a></li>
+            <li><a href="./addnumbers.html">addNumbers</a></li>
+            <li><a href="./convert_f_to_c.html">convert_c_to_d</a></li>
+            <li><a href="#">stopWatch</a></li>
+            <li><a href="./calculator.html">calculator</a></li>
+        </ul>
+    </header>
+    <footer>
+      <div>
+        <h1>STOPWATCH</h1>
+        <h3 id="get">00</h3><br>
+        <button onclick="start()">start</button>
+        <button onclick="stop()">stop</button>
+        <button onclick="reset()">reset</button>
+      </div>
+        <script>
+            var num = 0;
+            var data = document.getElementById("get");
+            function start() {
+                inid = setInterval(() => {
+                    num = num + 1;
+                    data.innerText = num;
+                }, 1000);
+            }
+            function stop() {
+                clearInterval(inid);
+            }
+            function reset() {
+                num = 0;
+                clearInterval(inid);
+                data.innerText = num
+            }
+
+        </script>
+    </footer>
+</body>
+
+</html>
