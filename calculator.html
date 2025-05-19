@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/261/261966.png" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1b0b6f7c;
+            background: radial-gradient(circle, rgba(94, 63, 251, 0) 0%, rgba(166, 106, 222, 1) 100%);
+           
+            min-height: 100vh;
+        }
+        h1{
+            color: black;
+        }
+
+        footer {
+            margin-top: 5%;
+            text-align: center;
+            color: white;
+            font-size: x-large;
+            font-family: monospace;
+            border: 10px solid black;
+            border-radius: 20px;
+            height: 400px;
+            width: 380px;
+            margin-left:40%;
+            background-color: white;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+        button{
+            background-color: rgb(238, 233, 233);
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            height: 30px;
+            width: 60px;
+            padding: auto;
+            border-radius: 20px;
+        }
+        header {
+            text-transform: capitalize;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header a:hover{
+            background-color: gray;
+            color: azure;
+            border-radius: 5px;
+        }
+        ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            padding: 2px;
+        }
+        #get{
+            border: 5px solid gray;
+            height: fit-content;
+            border-radius: 15px;
+            width: 270px;
+            margin-left:13%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDZ6L3fYeRi2D4pQelCLdQbi4P3w7Pf7NKFQ&s">
+        <ul>
+            <li><a href="./main.html">home</a></li>
+            <li><a href="./addnumbers.html">addNumbers</a></li>
+            <li><a href="./convert_f_to_c.html">convert_c_to_d</a></li>
+            <li><a href="./stopwatch.html">stopWatch</a></li>
+            <li><a href="#">calculator</a></li>
+        </ul>
+    </header>
+    <footer>
+         <h1>CALCULATOR</h1>
+         <div><h1 id="get">-</h1></div>
+    <button onclick="clickFn(1)">1</button>
+    <button onclick="clickFn(2)">2</button>
+    <button onclick="clickFn(3)">3</button>
+    <button onclick="clickFn(`/`)">/</button><br><p></p>
+    <button onclick="clickFn(4)">4</button>
+    <button onclick="clickFn(5)">5</button>
+    <button onclick="clickFn(6)">6</button>
+    <button onclick="clickFn(`*`) ">*</button><br><p></p>
+    <button onclick="clickFn(7)">7</button>
+    <button onclick="clickFn(8)">8</button>
+    <button onclick="clickFn(9)">9</button>
+    <button onclick="clickFn(`+`)">+</button><br><p></p>
+    <button onclick="removeElement()">d</button>
+    <button onclick="clickFn(0)">0</button>
+    <button onclick="clickFn(`.`)">.</button>
+    <button onclick="equalFn()">=</button>
+    <script>
+        var s="";
+        function clickFn(x){
+            s+=x;
+            printScreen();
+        }
+       function printScreen(){
+            let get=document.getElementById("get");
+            get.innerText=s;
+        }
+        function removeElement(){
+            var len = s.length-1;
+            s=s.slice(0,len);
+            printScreen();
+        }
+        function equalFn(){
+             s = eval(s).toString();
+             printScreen();
+        }
+    </script>
+    </footer>
+</body>
+
+</html>
